@@ -18,7 +18,7 @@ language governing permissions and limitations under the License.
 from . import julianday
 
 
-def is_leap_year(y):
+def is_leap(y):
     """
     Return True if given year is leap, False otherwise.
     Year 0 is considered as leap, so as -4, -8, -12, ...
@@ -30,7 +30,7 @@ def leap_days(y):
     """
     Return leap day quantity in year: 0 (usual) or 1 (leap).
     """
-    return int(is_leap_year(y))
+    return int(is_leap(y))
 
 
 def days_in_year(y):

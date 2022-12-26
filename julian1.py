@@ -18,20 +18,20 @@ language governing permissions and limitations under the License.
 from . import julian0, julianday, to_0_based, to_1_based
 
 
-def is_leap_year(y):
+def is_leap(y):
     """
     Return True if year is leap, False otherwise.
     Year -1 is considered as leap, so as -5, -9, -13...
     Invalid year 0 is treated as non-leap.
     """
-    return y != 0 and julian0.is_leap_year(to_0_based(y))
+    return y != 0 and julian0.is_leap(to_0_based(y))
 
 
 def leap_days(y):
     """
     Return leap day quantity in year: 0 (usual) or 1 (leap).
     """
-    return int(is_leap_year(y))
+    return int(is_leap(y))
 
 
 def days_in_year(y):

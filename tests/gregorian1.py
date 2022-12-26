@@ -9,7 +9,7 @@ YEARS = [
 ]
 
 
-# is_leap_year
+# is_leap
 
 CHECK = [
     True, False, False, False, False, False, False, False,
@@ -20,9 +20,9 @@ CHECK = [
 
 for i in range(len(YEARS)):
     y = YEARS[i]
-    is_leap = is_leap_year(y)
-    assert is_leap == CHECK[i],\
-        "Year %d is leap: expected %a; got %a" % (y, CHECK[i], is_leap)
+    leap = is_leap(y)
+    assert leap == CHECK[i],\
+        "Year %d is leap: expected %a; got %a" % (y, CHECK[i], leap)
 
 
 # days_in_year_month
@@ -36,7 +36,7 @@ def check_day_count(y, m, actual_day_count, expected_day_count):
     DAY_COUNTS = [31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     for y in YEARS:
         check_day_count(y, 1, days_in_year_month(y, 1), 31)
-        check_day_count(y, 2, days_in_year_month(y, 2), 28 + is_leap_year(y))
+        check_day_count(y, 2, days_in_year_month(y, 2), 28 + is_leap(y))
         for m in range(3, 13):
             check_day_count(y, m, days_in_year_month(y, m), DAY_COUNTS[m - 3])
 
